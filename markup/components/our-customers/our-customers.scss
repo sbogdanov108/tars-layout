@@ -1,0 +1,43 @@
+.our-customers {
+  background:      url('%=static=%assets/our-customers/our-customers-bg.jpg') no-repeat center;
+  background-size: cover;
+  margin-top:      75px;
+  padding:         77px 0 107px;
+}
+
+.our-customers__sign {
+  color: $font-color-process;
+
+  &--gray {
+    @include sign(#777);
+  }
+}
+
+.our-customers__think {
+  color:       #d8d8d8;
+  font-size:   20px;
+  font-weight: $font-light;
+  margin-top:  29px;
+  line-height: 1.7;
+  text-align:  center;
+
+  @media #{$media-tablet} {
+    padding: 0 114px;
+  }
+}
+
+.our-customers__author {
+  text-align: center;
+  margin-top: 10px;
+
+  a {
+    color:          $a-active;
+    font-size:      12px;
+    font-weight:    $font-extra-bold;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $main-font-color;
+    }
+  }
+}

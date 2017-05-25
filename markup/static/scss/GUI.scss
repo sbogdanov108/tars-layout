@@ -1,0 +1,13 @@
+// GUI stylies of the project
+// For example, styles of the links, buttons and so on.
+
+a {
+  @include transition(color);
+
+  color: $main-font-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $a-active;
+  }
+}

@@ -1,0 +1,23 @@
+.footer {
+  align-items:    center;
+  display:        flex;
+  flex-direction: row;
+  flex-wrap:      wrap;
+  background-color: #333;
+  margin-top: 74px;
+  min-height: 92px;
+}
+
+.footer__copy {
+  color: #cacaca;
+  font-size: 14px;
+  font-weight: $font-medium;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $a-hover;
+    }
+  }
+}

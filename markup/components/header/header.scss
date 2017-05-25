@@ -1,0 +1,170 @@
+.header {
+  background-color: $header-bg-color;
+
+  @media #{$media-tablet} {
+    position: fixed;
+    top:    0;
+    right:    0;
+    left:     0;
+    z-index:  1000;
+  }
+}
+
+.header__wrapper {
+  @include wrapper;
+
+  display:     flex;
+  align-items: center;
+
+  @media #{$media-mobile} {
+    flex-direction:  column;
+    justify-content: space-around;
+    height:          auto;
+  }
+
+  @media #{$media-tablet} {
+    flex-direction:  row;
+    height:          110px;
+    justify-content: space-between;
+  }
+}
+
+.header__logo {
+  a {
+    @include transition(color);
+
+    color:            #e9e9e9;
+    background-color: #414141;
+    font-family:      $font-bebas-regular;
+    font-size:        16px;
+    text-transform:   uppercase;
+    border-radius:    35px;
+    width:            52px;
+    height:           52px;
+    display:          inline-block;
+    text-align:       center;
+    letter-spacing:   9px;
+
+    span {
+      position: relative;
+      top:      6px;
+      left:     4px;
+    }
+
+    &:hover {
+      color: $a-hover;
+    }
+  }
+}
+
+.header__links {
+  @include nl;
+
+  font-size:      13px;
+  font-weight:    $font-extra-bold;
+  text-transform: uppercase;
+  display:        flex;
+
+  li {
+    position: relative;
+
+    &:hover {
+      .header__submenu {
+        visibility: visible;
+        opacity:    1;
+      }
+    }
+  }
+
+  li:first-child {
+    a {
+      margin-left: 0;
+    }
+  }
+
+  li:last-child {
+    a {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    @include transition(color);
+
+    &:hover {
+      color: #1abb9c;
+    }
+  }
+
+  @media #{$media-mobile} {
+    flex-direction: column;
+
+    li {
+      text-align: center;
+    }
+
+    a {
+      display: inline-block;
+      margin:  7px 0;
+    }
+  }
+
+  @media #{$media-tablet} {
+    flex-direction: row;
+
+    li:last-child {
+      .header__submenu {
+        right: 0;
+      }
+    }
+
+    a {
+      margin: 0 23px;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    li:last-child {
+      .header__submenu {
+        left: 0;
+      }
+    }
+  }
+}
+
+.header__arrow-down {
+  display:   inline-block;
+  margin-left: 5px;
+  transform: rotate(-90deg);
+}
+
+.header__submenu {
+  @include nl;
+  //@include transition(opacity);
+
+  position:   absolute;
+  opacity:    0;
+  top:        100%;
+  width:      100%;
+  visibility: hidden;
+  min-width: 180px;
+  padding:   20px 8px 10px;
+
+  li {
+    background: #ddd;
+  }
+
+  a {
+    display: block;
+    margin: 0;
+    padding: 7px 0;
+  }
+}
+
+.header__link {
+  &--active {
+    a {
+      color: $a-active;
+    }
+  }
+}

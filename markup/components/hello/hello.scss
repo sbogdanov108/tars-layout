@@ -1,0 +1,22 @@
+.hello {
+  margin: 61px 0 65px 0;
+
+  @media #{$media-mobile} {
+    text-align: center;
+  }
+
+  @media #{$media-tablet} {
+    text-align: left;
+  }
+}
+
+.hello__first {
+  font-size: 35px;
+  font-weight: $font-extra-bold;
+  margin-bottom: 8px;
+}
+
+.hello__second {
+  font-size: 25px;
+  font-weight: $font-light;
+}

@@ -1,0 +1,44 @@
+doctype html
+html(lang="ru")
+
+  include ../components/head/head.pug
+  include ../components/header/header.pug
+  include ../components/hello/hello.pug
+  include ../components/slider/slider.pug
+  include ../components/what-we-do/what-we-do.pug
+  include ../components/our-process/our-process
+  include ../components/our-projects/our-projects.pug
+  include ../components/our-customers/our-customers.pug
+  include ../components/our-journal/our-journal.pug
+  include ../components/footer/footer.pug
+
+  head
+    +head(head.defaults)
+  body.page
+    | %=symbols=%
+
+    +header()
+
+    div.page__wrapper
+      +hello()
+      +slider()
+
+    main
+      div.page__wrapper
+        +what-we-do()
+
+      +our-process()
+
+      div.page__wrapper
+        +our-projects()
+
+      +our-customers()
+      +our-journal()
+
+    +footer()
+
+    script(src='%=static=%js/separate-js/svg4everybody.min.js')
+    script svg4everybody();
+
+    //- Main scripts. You can replace it, but I recommend you to leave it here
+    script(src='%=static=%js/main%=hash=%%=min=%.js')

@@ -1,0 +1,18 @@
+// Common styles of the project
+
+html, body {
+  color: $main-font-color;
+  height: 100%;
+  font-family: $main-font;
+  min-height: 400px;
+}
+
+body {
+  @media #{$media-tablet} {
+    margin-top: 171px;
+  }
+}
+
+.page__wrapper {
+  @include wrapper;
+}

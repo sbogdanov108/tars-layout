@@ -1,0 +1,96 @@
+// Mixins.
+
+@mixin nl {
+  margin:              0;
+  padding:              0;
+  text-indent:         0;
+  list-style:          none;
+  list-style-position: outside;
+}
+
+@mixin cf {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  .lt-ie8 & {
+    zoom: 1;
+  }
+}
+
+@mixin blocks-justify {
+  text-align:   justify;
+  text-justify: newspaper;
+}
+
+// You can add your own mixins here:
+// Mixins.
+
+@mixin wrapper {
+  margin: 0 auto;
+
+  @media #{$media-tablet} {
+    width: $width-tablet;
+  }
+
+  @media #{$media-desktop} {
+    width: $main-width;
+  }
+}
+
+@mixin transition( $css: all, $time: .2s, $animation: linear ) {
+  transition: $css $time $animation;
+}
+
+@mixin sign($b-color) {
+  font-size:      16px;
+  font-weight:    $font-extra-bold;
+  text-align:     center;
+  text-transform: uppercase;
+
+  span:first-child {
+    height:           1px;
+    background-color: $b-color;
+    display:          inline-block;
+    position:         relative;
+    bottom:           5px;
+    right:            20px;
+
+    @media #{$media-mobile} {
+      width: 0;
+    }
+
+    @media #{$media-tablet} {
+      width: 100px;
+    }
+  }
+
+  span:last-child {
+    height:           1px;
+    background-color: $b-color;
+    display:          inline-block;
+    position:         relative;
+    bottom:           5px;
+    left: 20px;
+
+    @media #{$media-mobile} {
+      width: 0;
+    }
+
+    @media #{$media-tablet} {
+      width: 100px;
+    }
+  }
+}
+
+@mixin img-responsive {
+  display:   block;
+  max-width: 100%;
+  height:    auto;
+}
