@@ -18,10 +18,12 @@ $a-active: #1abb9c;
 
 $border-color: #e1e1e1;
 
+$scrollingBar: 17px;
+
 $width-mobile: 320px;
 $width-tablet: 768px;
 $width-desktop: 1200px;
 
-$media-mobile: (min-width: $width-mobile);
+$media-mobile: (max-width: $width-mobile), (min-width: $width-mobile);
 $media-tablet: (min-width: $width-tablet);
-$media-desktop: (min-width: $width-desktop)
+$media-desktop: (min-width: $width-desktop);
