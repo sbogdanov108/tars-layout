@@ -53,7 +53,7 @@ module.exports = {
          * Use linting of js-files
          * @type {Boolean}
          */
-        lint: true,
+        lint: false,
 
         /**
          * Use babel for ES6(ES7-ESNext) syntax support

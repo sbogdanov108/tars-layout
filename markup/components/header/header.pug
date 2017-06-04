@@ -8,7 +8,7 @@ mixin header()
         ul.header__links
           li.header__link--active
             a(href='#') Home
-          li
+          li.header__has-submenu
             a(href='#') Pages
               span.header__arrow-down <
             ul.header__submenu
@@ -18,7 +18,7 @@ mixin header()
                 a(href='#') Pages Submenu 2
           li
             a(href='#') Journal
-          li
+          li.header__has-submenu
             a(href='#') Portfolio
               span.header__arrow-down <
             ul.header__submenu
@@ -28,7 +28,7 @@ mixin header()
                 a(href='#') Portfolio Submenu 2
           li
             a(href='#') Features
-          li
+          li.header__has-submenu
             a(href='#') Contact
               span.header__arrow-down <
             ul.header__submenu
