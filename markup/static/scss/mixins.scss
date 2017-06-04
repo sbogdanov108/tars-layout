@@ -40,7 +40,8 @@
   }
 
   @media #{$media-desktop} {
-    width: $main-width - $scrollingBar;
+    //width: $main-width - $scrollingBar;
+    width: $main-width;
   }
 }
 
