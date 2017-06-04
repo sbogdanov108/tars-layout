@@ -1,8 +1,7 @@
-mixin slider()
+mixin slider(data)
   section.slider
     div.slider__items
-      div
-        img(src='%=static=%img/assets/slider/slider.jpg' alt='Slider 1')
-      div
-        img(src='%=static=%img/assets/slider/slider.jpg' alt='Slider 2')
+      each value in data.values
+        div
+          img(src=`%=static=%img/assets/slider/${value.src}` alt=`${value.alt}`)
     div.slider__arrows
