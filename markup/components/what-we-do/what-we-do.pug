@@ -1,15 +1,14 @@
-mixin what-we-do()
+mixin what-we-do(data)
   section.what-we-do
     h3.what-we-do__sign
       span
       | What we do
       span
-
     div.what-we-do__items
-      each val in [1, 2, 3, 4]
+      each value in data.values
         div.what-we-do__item
           div.what-we-do__outer
             div.what-we-do__inner
-              img.what-we-do__img(src='%=static=%img/assets/what-we-do/what-we-do-'+ val +'.png' alt='what-we-do-' + val)
+              img.what-we-do__img(src=`%=static=%img/assets/what-we-do/${value.src}` alt=`${value.alt}`)
               h4 Print Design
               p Nulla vitae libero pharetra augue. Etiam porta malesuada magna mollis euismod consectetur sem urdom tempus porttitor.
