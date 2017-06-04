@@ -1,4 +1,4 @@
-mixin our-process()
+mixin our-process(data)
   section.our-process
     div.page__wrapper
       h3.our-process__sign.our-process__sign--gray
@@ -8,25 +8,9 @@ mixin our-process()
       p.our-process__desc
         | Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas sed diam eget risus varius blandit sit amet non magna posuere velit aliquet.
       div.our-process__items
-        div.our-process__item
-          a(href='#')
-            != pugHelpers.Icon.call(locals, {iconName: 'our-process-bulbs', className: 'our-process__bulbs', iconWidth: '64', iconHeight: '64'})
-          p 1. Creative ideas
-        div.our-process__line
-
-        div.our-process__item
-          a(href='#')
-            != pugHelpers.Icon.call(locals, {iconName: 'our-process-rocket', className: 'our-process__rocket', iconWidth: '64', iconHeight: '64'})
-          p 1. Creative ideas
-        div.our-process__line
-
-        div.our-process__item
-          a(href='#')
-            != pugHelpers.Icon.call(locals, {iconName: 'our-process-chemistry', className: 'our-process__chemistry', iconWidth: '64', iconHeight: '64'})
-          p 1. Creative ideas
-        div.our-process__line
-
-        div.our-process__item
-          a(href='#')
-            != pugHelpers.Icon.call(locals, {iconName: 'our-process-award', className: 'our-process__award', iconWidth: '64', iconHeight: '64'})
-          p 1. Creative ideas
+        each value in data.values
+          div.our-process__item
+            a(href='#')
+              != pugHelpers.Icon.call(locals, {iconName: value.iconName, className: value.className, iconWidth: '64', iconHeight: '64'})
+            p 1. Creative ideas
+          div.our-process__line
