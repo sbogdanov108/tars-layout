@@ -1,39 +1,19 @@
-mixin our-projects()
+mixin our-projects(data)
   section.our-projects
     h3.our-projects__sign
       span
       | Our recent projects
       span
     div.our-projects__items
-      div.our-projects__item
-        img(src="%=static=%img/content/recent-project-1.jpg" alt="recent-project-1")
-        h4
-          a(href="#") Disk cover Mockup
-        div.our-projects__tags
-          a(href="#") Music,&nbsp;
-          a(href="#") PSD,&nbsp;
-          a(href="#") Mockups
-        p.our-projects__desc
-          | Nulla libero un pharetra augue etiam malesuada magna mollis. Nullam id dolor id nibh ultricies.
+      each value in data.values
+        div.our-projects__item
+          img(src=`%=static=%img/content/${value.src}` alt=`${value.alt}`)
 
-      div.our-projects__item
-        img(src="%=static=%img/content/recent-project-2.jpg" alt="recent-project-2")
-        h4
-          a(href="#") John Doe business Card
-        div.our-projects__tags
-          a(href="#") Music,&nbsp;
-          a(href="#") PSD,&nbsp;
-          a(href="#") Mockups
-        p.our-projects__desc
-          | Nulla libero un pharetra augue etiam malesuada magna mollis. Nullam id dolor id nibh ultricies.
-
-      div.our-projects__item
-        img(src="%=static=%img/content/recent-project-3.jpg" alt="recent-project-3")
-        h4
-          a(href="#") Infographic Elements
-        div.our-projects__tags
-          a(href="#") Music,&nbsp;
-          a(href="#") PSD,&nbsp;
-          a(href="#") Mockups
-        p.our-projects__desc
-          | Nulla libero un pharetra augue etiam malesuada magna mollis. Nullam id dolor id nibh ultricies.
+          h4
+            a(href="#") #{value.title}
+          div.our-projects__tags
+            a(href="#") Music,&nbsp;
+            a(href="#") PSD,&nbsp;
+            a(href="#") Mockups
+          p.our-projects__desc
+            | Nulla libero un pharetra augue etiam malesuada magna mollis. Nullam id dolor id nibh ultricies.
