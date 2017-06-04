@@ -1,4 +1,4 @@
-mixin our-journal()
+mixin our-journal(data)
   section.our-journal
     div.page__wrapper
       h3.our-journal__sign
@@ -6,56 +6,21 @@ mixin our-journal()
         | From the journal
         span
       div.our-journal__items
-        div.our-journal__item
-          img(src="%=static=%img/content/our-journal-1.jpg" alt="our-journal-1")
-          div.our-journal__info
-            div.our-journal__date
-              span.our-journal__day 21
-              span.our-journal__month Feb
-            h4.our-journal__title
-              a(href="#") Ultricies Cras Ullamcorper Elit
-            div.our-journal__meta
-              span.our-journal__tags
-                a(href="#") Journal,&nbsp;
-                a(href="#") Article
-              ||
-              span.our-journal__author
-                a(href="#") 7 Comments
-          p.our-journal__desc
-            | Nulla libero un pharetra augue etiam malesuada magna mollis. Praesent commodo cursus magna scelerisque.
-
-        div.our-journal__item
-          img(src="%=static=%img/content/our-journal-2.jpg" alt="our-journal-2")
-          div.our-journal__info
-            div.our-journal__date
-              span.our-journal__day 21
-              span.our-journal__month Feb
-            h4.our-journal__title
-              a(href="#") Ultricies Cras Ullamcorper Elit
-            div.our-journal__meta
-              span.our-journal__tags
-                a(href="#") Journal,&nbsp;
-                a(href="#") Article
-              | |
-              span.our-journal__author
-                a(href="#") 7 Comments
-          p.our-journal__desc
-            | Nulla libero un pharetra augue etiam malesuada magna mollis. Praesent commodo cursus magna scelerisque.
-
-        div.our-journal__item
-          img(src="%=static=%img/content/our-journal-3.jpg" alt="our-journal-3")
-          div.our-journal__info
-            div.our-journal__date
-              span.our-journal__day 21
-              span.our-journal__month Feb
-            h4.our-journal__title
-              a(href="#") Ultricies Cras Ullamcorper Elit
-            div.our-journal__meta
-              span.our-journal__tags
-                a(href="#") Journal,&nbsp;
-                a(href="#") Article
-              | |
-              span.our-journal__author
-                a(href="#") 7 Comments
-          p.our-journal__desc
-            | Nulla libero un pharetra augue etiam malesuada magna mollis. Praesent commodo cursus magna scelerisque.
+        each value in data.values
+          div.our-journal__item
+            img(src=`%=static=%img/content/${value.src}` alt=`${value.alt}`)
+            div.our-journal__info
+              div.our-journal__date
+                span.our-journal__day 21
+                span.our-journal__month Feb
+              h4.our-journal__title
+                a(href="#") Ultricies Cras Ullamcorper Elit
+              div.our-journal__meta
+                span.our-journal__tags
+                  a(href="#") Journal,&nbsp;
+                  a(href="#") Article
+                ||
+                span.our-journal__author
+                  a(href="#") 7 Comments
+            p.our-journal__desc
+              | Nulla libero un pharetra augue etiam malesuada magna mollis. Praesent commodo cursus magna scelerisque.
